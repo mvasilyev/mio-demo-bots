@@ -1,0 +1,27 @@
+{
+    "development": {
+        "localBaseUrl": "https://mio-hipchat-weather.glitch.me",
+        "usePublicKey": false,
+        "watch": false,
+        "port": "$PORT",
+        "maxTokenAge": 86400,
+        "store": {
+            "adapter": "jugglingdb",
+            "type": "sqlite3",
+            "database": "store.db"
+        }
+    },
+    "production": {
+        "usePublicKey": false,
+        "port": "$PORT",
+        "localBaseUrl": "https://mio-hipchat-weather.glitch.me",
+        "store": {
+            "adapter": "redis",
+            "url": "$REDIS_URL"
+        },
+        "whitelist": [
+            "*.hipchat.com"
+        ]
+    },
+    "product": "hipchat"
+}

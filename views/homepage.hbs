@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{name}}</title>
+    <link rel="shortcut icon" type="image/png" href="http://abotars.hipch.at/bot/{{key}}.png">
+    <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.6/css/aui.min.css" media="all">
+    <link rel="stylesheet" href="{{furl '/css/homepage.css'}}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//aui-cdn.atlassian.com/aui-adg/5.9.6/js/aui.min.js"></script>
+  </head>
+
+  <body id="aui-flatpack" class="aui-page-fixed">
+    <section id="content" role="main">
+      <header class="aui-page-header">
+        <div class="aui-page-header-inner">
+          <div class="aui-page-header-main intro-header">
+            <div class="aui-group">
+              <div class="aui-item addon-logo">
+                <img src="http://abotars.hipch.at/bot/{{key}}.png" alt="{{name}}">
+
+                <div>
+                  <a href="https://www.hipchat.com/addons/install?url={{links.self}}" class="aui-button aui-button-primary"
+                     title="Install this add-on in HipChat"><span
+                      class="aui-icon aui-icon-small aui-iconfont-hipchat"></span>
+                    Add to HipChat</a>
+                </div>
+              </div>
+              <div class="aui-item">
+                <h1>
+                  {{name}}
+                  <small class="vendor">By <a href="{{vendor.url}}">{{vendor.name}}</a></small>
+                </h1>
+                <p class="subtitle">
+                  {{description}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="aui-page-panel addon-intro-page">
+        <div class="aui-page-panel-inner">
+          <section class="aui-page-panel-item">
+            <div class="aui-group">
+              <div class="aui-item">
+                <p>
+                <h1 id="messageiohipchatweatheraddon">Message.io HipChat Weather Add-On</h1>
+
+<h2 id="apikeys">API Keys</h2>
+
+<p>For this to work you'll need 2 API keys.</p>
+
+<ol>
+<li>Forecast API key, get it @ https://darksky.net/dev/</li>
+
+<li>Google geolocation API key, get it @ https://developers.google.com/maps/documentation/geolocation/get-api-key</li>
+</ol>
+
+<p>Place those keys in .env file as "forecastAPIKey" and "googleAPIKey" respectively.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>You will also need to change "localBaseUrl" in config.json. Use your Glitch app url. This application's one is <code>https://mio-hipchat-weather.glitch.me</code> (don't add trailing slash at the end).</p>
+
+<h2 id="boardingonyourhipchat">Boarding on your HipChat</h2>
+
+<p>After all set up, go to your HipChat Group Integration settings @ <code>https://&lt;your-group-name&gt;.hipchat.com/addons/</code> and scroll down to "Install an integration from a descriptor URL" link.</p>
+
+<p>Paste descriptor link there, for this app it would be <code>https://mio-hipchat-weather.glitch.me/atlassian-connect.json</code>, replace base URL to yours.</p>
+
+<p>Clisk "Approve", and all done!</p>
+
+<p>You now can send message </p>
+
+<blockquote>
+  <p>/weather zipcode</p>
+</blockquote>
+
+<p>in any room your Add-on installed it and get weather forecast for this area.</p>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <footer id="footer" role="contentinfo">
+          <section class="footer-body">
+            <ul id="aui-footer-list">
+              <li><a href="https://hipchat.com">HipChat</a></li>
+              <li><a href="https://developer.atlassian.com/hipchat">Developers</a></li>
+              <li>Copyright © 2016 Atlassian</li>
+            </ul>
+            <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+          </section>
+        </footer>
+      </div>
+    </section>
+  </body>
+
+</html>

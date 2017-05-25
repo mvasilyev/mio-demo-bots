@@ -1,0 +1,35 @@
+{
+  "key": "message.io-weather-add-on",
+  "name": "Message.io Weather Add-on",
+  "description": "Message.io Weather Add-on",
+  "vendor": {
+    "name": "Message.io",
+    "url": "https://message.io"
+  },
+  "links": {
+    "self": "{{localBaseUrl}}/atlassian-connect.json",
+    "homepage": "{{localBaseUrl}}"
+  },
+  "capabilities": {
+    "hipchatApiConsumer": {
+      "scopes": [
+        "send_notification",
+        "view_room"
+      ],
+      "avatar": {
+        "url": "{{localBaseUrl}}/img/logo.png",
+        "url@2x": "{{localBaseUrl}}/img/logo.png"
+      }
+    },
+    "installable": {
+      "callbackUrl": "{{localBaseUrl}}/installable"
+    },
+    "webhook": {
+      "url": "{{localBaseUrl}}/webhook",
+      "pattern": "^/weather",
+      "event": "room_message",
+      "name": "weather",
+      "authentication": "jwt"
+    }
+  }
+}
